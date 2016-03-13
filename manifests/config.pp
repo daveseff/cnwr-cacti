@@ -22,11 +22,15 @@ class cacti::config inherits cacti{
     ],
   }
 
-  cron::job { 'cacti':
-    minute  => '*/5',
-    command => '/usr/bin/php /usr/share/cacti/poller.php > /dev/null 2>&1',
-    user    => 'cacti',
+  cron {
+      'cacti':
+         command  => '/usr/bin/php /usr/share/cacti/poller.php > /dev/null 2>&1',
+             user     => 'cacti',
+             ensure   => 'present',
+             minute   => '*/5',
+             hour     => '*',
+             monthday => '*',
+             month    => '*',
+             weekday  => '*',
   }
-
-
 }

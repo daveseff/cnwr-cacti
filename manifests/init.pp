@@ -60,6 +60,7 @@
 class cacti (
   $cacti_package = $::cacti::params::cacti_package,
   $database_root_pass = $::cacti::params::database_root_pass,
+  $database_root_user = $::cacti::params::database_root_user,
   $database_pass = $::cacti::params::database_pass,
   $database_user = $::cacti::params::database_user,
   $database_host = $::cacti::params::database_host,
